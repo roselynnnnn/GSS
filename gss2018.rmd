@@ -80,7 +80,7 @@ fisher.test(table1)
 ```
 
 We reject the null hypothesis because the P-value is lower than 0.05. 
-The fisher exact test shows that the odds of 2.27 would round up to 2.3 due to the p-value being lower than 0.05.
+The fisher exact test shows that the odds of 2.27 would round up to 2.3:1 due to the p-value being lower than 0.05.
 
 #  Question 2
 
@@ -144,8 +144,8 @@ Determine if a persons performance on the wordsum test (WORDSUM) is independent 
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-$H_0$: A persons performance on the wordsum test is not independent of their level of schooling.  
-$H_A$: A persons performance on the wordsum test is independent of their level of schooling.
+$H_0$: A persons performance on the wordsum test is independent of their level of schooling.  
+$H_A$: A persons performance on the wordsum test is not independent of their level of schooling.
 
 ##Results
 
@@ -184,6 +184,12 @@ summary.aov(model1)
 ```
 
 We reject the null hypothesis because the p-value is less that 0.05. So a persons performance on the wordsum test is independent on their level of schooling.
+
+```{r}
+plot(TukeyHSD(model1))
+```
+
+There is no statistical evidence between the difference with those in high school and less than high school.
 
 # Discussion and Conclusion
 
